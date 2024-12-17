@@ -11,119 +11,113 @@ using namespace System::Drawing;
 /// Carré de couleur
 /// </summary>
 ref class CCarre
-	{
-		private :
-			
-			int cote;
-			int sx;
-			int sy;
-			Color color;
-		
-		public :
-			CCarre()
-			{
-				sx = 10;
-				sy = 10;
-				cote = 20;
-				color = Color::Red;
-			}
+{
+private:
+    int cote;
+    int sx;
+    int sy;
+    Color color;
 
-			/// <summary>
-			/// initialise m_x privé
-			/// </summary>
-			/// <param name="x">Position x du carré</param>
-			void Setsx(int x1)
-			{
-				// A COMPLETER ///////////////////////////////////////////////////////////////////////////
-			}
+public:
+    CCarre()
+    {
+        sx = 10;
+        sy = 10;
+        cote = 20;
+        color = Color::Red;
+    }
 
-			/// <summary>
-			/// retourne m_x privé
-			/// </summary>
-			/// <returns>Position x du carré</returns>
-			int Getsx()
-			{
-				// A COMPLETER ///////////////////////////////////////////////////////////////////////
-				return 0; // a modifier
-			}
+    /// <summary>
+    /// initialise sx privé
+    /// </summary>
+    /// <param name="x1">Position x du carré</param>
+    void Setsx(int x1)
+    {
+        sx = x1;
+    }
 
-			/// <summary>
-			/// initialise m_y privé
-			/// </summary>
-			/// <param name="y">Position y du carré</param>
-			void Setsy(int y1)
-			{
-				// A COMPLETER //////////////////////////////////////////////////////////////////////////
-				
-			}
+    /// <summary>
+    /// retourne sx privé
+    /// </summary>
+    /// <returns>Position x du carré</returns>
+    int Getsx()
+    {
+        return sx;
+    }
 
-			/// <summary>
-			/// retourne m_y privé
-			/// </summary>
-			/// <returns>Position y du carré</returns>
-			int Getsy()
-			{
-				// A COMPLETER //////////////////////////////////////////////////////////////////////
-				return 0; // a modifier
-			}
+    /// <summary>
+    /// initialise sy privé
+    /// </summary>
+    /// <param name="y1">Position y du carré</param>
+    void Setsy(int y1)
+    {
+        sy = y1;
+    }
 
+    /// <summary>
+    /// retourne sy privé
+    /// </summary>
+    /// <returns>Position y du carré</returns>
+    int Getsy()
+    {
+        return sy;
+    }
 
-			/// <summary>
-			/// initialise m_color privé
-			/// </summary>
-			/// <param name="couleur">Couleur du carré</param>
-			void SetColor(Color couleur) 
-			{
-				color=couleur;
-			}
+    /// <summary>
+    /// initialise color privé
+    /// </summary>
+    /// <param name="couleur">Couleur du carré</param>
+    void SetColor(Color couleur)
+    {
+        color = couleur;
+    }
 
-			/// <summary>
-			/// initialise m_cote privé
-			/// </summary>
-			/// <param name="cote">Coté du carré</param>
-			void SetCote(int cote)
-			{
-				// A COMPLETER /////////////////////////////////////////////////////////////////////////
-			}
+    /// <summary>
+    /// initialise cote privé
+    /// </summary>
+    /// <param name="c">Coté du carré</param>
+    void SetCote(int c)
+    {
+        cote = c;
+    }
 
-			/// <summary>
-			/// retourne m_cote privé
-			/// </summary>
-			/// <returns>Coté du carré</returns>
-			int GetCote() 
-			{
-				// A COMPLETER ////////////////////////////////////////////////////////////////////////
-				return 0; // a modifier
-			}
+    /// <summary>
+    /// retourne cote privé
+    /// </summary>
+    /// <returns>Coté du carré</returns>
+    int GetCote()
+    {
+        return cote;
+    }
 
-			/// <summary>
-			/// Déplace le carré suivant un vecteur déplacelent dx et dy
-			/// </summary>
-			/// <param name="dx">Valeur dx du déplacement</param>
-			/// <param name="dy">Valeur dy du déplacement</param>
-			void Deplacer(int dx, int dy) 
-			{
-				// A COMPLETER /////////////////////////////////////////////////////////////////////
-			}
+    /// <summary>
+    /// Déplace le carré suivant un vecteur déplacement dx et dy
+    /// </summary>
+    /// <param name="dx">Valeur dx du déplacement</param>
+    /// <param name="dy">Valeur dy du déplacement</param>
+    void Deplacer(int dx, int dy)
+    {
+        sx += dx;
+        sy += dy;
+    }
 
-			/// <summary>
-			/// Dessine le carré 
-			/// </summary>
-			/// <param name="form">pointeur sur la fenêtre dans laquelle on dessine.</param>
-			void Dessiner(System::Windows::Forms::Form ^form)
-			{
-				Graphics ^g = form->CreateGraphics();
-				g->FillRectangle(gcnew SolidBrush(color), sx,sy, cote, cote);
-			}
+    /// <summary>
+    /// Dessine le carré
+    /// </summary>
+    /// <param name="form">pointeur sur la fenêtre dans laquelle on dessine.</param>
+    void Dessiner(System::Windows::Forms::Form^ form)
+    {
+        Graphics^ g = form->CreateGraphics();
+        g->FillRectangle(gcnew SolidBrush(color), sx, sy, cote, cote);
+    }
 
-			/// <summary>
-			/// Efface le carré 
-			/// </summary>
-			/// <param name="form">pointeur sur la fenêtre dans laquelle on dessine.</param>
-			void Effacer(System::Windows::Forms::Form ^form)
-			{
-				Graphics ^g = form->CreateGraphics();
-				g->FillRectangle(gcnew SolidBrush(form->BackColor), sx, sy, cote, cote);
-			}
-				
-	};
+    /// <summary>
+    /// Efface le carré
+    /// </summary>
+    /// <param name="form">pointeur sur la fenêtre dans laquelle on dessine.</param>
+    void Effacer(System::Windows::Forms::Form^ form)
+    {
+        Graphics^ g = form->CreateGraphics();
+        g->FillRectangle(gcnew SolidBrush(form->BackColor), sx, sy, cote, cote);
+    }
+};
