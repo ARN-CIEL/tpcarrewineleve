@@ -26,23 +26,21 @@ namespace tpcarrewineleve {
 		Form1(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: ajoutez ici le code du constructeur
-			//
-			// instanciation dans le tas managé du carré numéro 1 
+
+			// instanciation dans le tas managé du carré numéro 1
 			pcarre1 = gcnew CCarre();
 			pcarre1->SetColor(Color::Red);
-			
-			
-			// A COMPLETER /////////////////////////////////////////////////////////////////////////////////
 
-
+			
+			pcarre1->Setsx(50);  
+			pcarre1->Setsy(50);  
+			pcarre1->SetCote(100);  
 
 			this->timer1->Enabled = true;
 			largeur = this->ClientRectangle.Width;
 			hauteur = this->ClientRectangle.Height;
-
 		}
+
 
 	protected:
 		/// <summary>
